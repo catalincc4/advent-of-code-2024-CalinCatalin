@@ -10,8 +10,7 @@ namespace AdventOfCode2025
             var fileContent = File.ReadAllText(filePath);
             var lines = fileContent.Split("\n");
 
-           // Day1.ExecutePart1(lines);
-            Day1.ExecutePart2(lines);
+            Day2.ExecutePart2(lines);
         }
     }
 }

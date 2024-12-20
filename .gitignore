@@ -1,0 +1,7 @@
+
+.idea
+*.iml
+*.obj
+*.dll
+/AdventOfCode2025/obj/**
+/AdventOfCode2025/bin/**

@@ -101,7 +101,7 @@ public class Day4
         }   
     }
 
-    private static char[][] ConstructMatrix(string[] lines)
+    public static char[][] ConstructMatrix(string[] lines)
     {
         char[][] charMatrix = new char[lines.Length][];
         int i = 0;

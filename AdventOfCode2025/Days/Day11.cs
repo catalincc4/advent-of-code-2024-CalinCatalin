@@ -6,7 +6,7 @@ public class Day11
     {
         var numbers = ParseLines(lines);
         //BlinkXTimes(numbers, 25);
-        CountStonesAfterBlinks(numbers, 75);
+        CountStonesAfterBlinks(numbers, 5);
     }
 
     static long CountStonesAfterBlinks(List<long> stones, int blinks)
@@ -31,6 +31,7 @@ public class Day11
             {
                 long stone = stoneCount.Key;
                 long count = stoneCount.Value;
+                Console.Write($"stone: {stone}, count: {count} ");
 
                 if (stone == 0)
                 {
@@ -65,6 +66,7 @@ public class Day11
                 }
             }
 
+            Console.WriteLine();
             stoneCounts = newCounts;
         }
 

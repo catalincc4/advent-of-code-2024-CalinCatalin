@@ -28,7 +28,11 @@ public class Day15
         {
             for (int j = 1; j < matrix[0].Length - 1; j++)
             {
-                if(matrix[i][j] == 'O')
+                // if(matrix[i][j] == 'O')
+                // {
+                //     sum += i * 100 + j;
+                // }
+                if(matrix[i][j] == '[')
                 {
                     sum += i * 100 + j;
                 }

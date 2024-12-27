@@ -12,3 +12,4 @@ D:\AdventOfCode\AdventOfCode2025\AdventOfCode2025\obj\Debug\net8.0\refint\Advent
 D:\AdventOfCode\AdventOfCode2025\AdventOfCode2025\obj\Debug\net8.0\AdventOfCode2025.pdb
 D:\AdventOfCode\AdventOfCode2025\AdventOfCode2025\obj\Debug\net8.0\AdventOfCode2025.genruntimeconfig.cache
 D:\AdventOfCode\AdventOfCode2025\AdventOfCode2025\obj\Debug\net8.0\ref\AdventOfCode2025.dll
+D:\AdventOfCode\AdventOfCode2025\AdventOfCode2025\obj\Debug\net8.0\AdventOfCode2025.sourcelink.json

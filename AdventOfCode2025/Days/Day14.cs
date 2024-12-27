@@ -7,7 +7,11 @@ public class Day14
     public static void ExecutePart1(string[] lines)
     {
         List<((int x, int y) position, (int x, int y) velocity)> robots = ParseLines(lines);
-        CalculatePositions(robots, 10000, 103, 101);
+        for(int i = 2024; i < 40000000 ; i++)
+        {
+            CalculatePositions(robots, i, 103, 101);
+        }
+   
     }
 
     private static void CalculateAndPrintPositions(List<((int x, int y) position, (int x, int y) velocity)> robots,
@@ -59,31 +63,34 @@ public class Day14
                 CalculatePositionAfterXSeconds(robot.position, robot.velocity, seconds, xDimension, yDimension);
             if (x >= 0 && x < xDimension / 2 && y >= 0 && y < yDimension / 2)
             {
-                Console.Write("q1 ");
-                Console.WriteLine($"x: {x}, y: {y}");
+                // Console.Write("q1 ");
+                // Console.WriteLine($"x: {x}, y: {y}");
                 quadrant1++;
             }
             else if (x > xDimension / 2 && x < xDimension && y >= 0 && y < yDimension / 2)
             {
-                Console.Write("q2 ");
-                Console.WriteLine($"x: {x}, y: {y}");
+                // Console.Write("q2 ");
+                // Console.WriteLine($"x: {x}, y: {y}");
                 quadrant2++;
             }
             else if (x >= 0 && x < xDimension / 2 && y > yDimension / 2 && y < yDimension)
             {
-                Console.Write("q3 ");
-                Console.WriteLine($"x: {x}, y: {y}");
+                // Console.Write("q3 ");
+                // Console.WriteLine($"x: {x}, y: {y}");
                 quadrant3++;
             }
             else if (x > xDimension / 2 && x <= xDimension && y > yDimension / 2 && y < yDimension)
             {
-                Console.Write("q4 ");
-                Console.WriteLine($"x: {x}, y: {y}");
+                // Console.Write("q4 ");
+                // Console.WriteLine($"x: {x}, y: {y}");
                 quadrant4++;
             }
         }
 
-        Console.WriteLine(quadrant1 * quadrant2 * quadrant3 * quadrant4);
+        if (quadrant1 == quadrant2 && quadrant3 == quadrant4)
+        {
+            Console.WriteLine("All quadrants have the same number of robots for second: " + seconds);
+        }
     }
 
     private static (int, int) CalculatePositionAfterXSeconds((int x, int y) position, (int x, int y) velocity,

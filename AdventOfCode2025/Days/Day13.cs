@@ -13,13 +13,21 @@ public class Day13
 
     static void CalculateTokens(List<(List<(int x, int y)> buttons, int xTarget, int yTarget)> games)
     {
-        var tokens = 0;
+        long tokens = 0;
+        int i = 0;
         foreach (var game in games)
         {
-            var (A, B) = CalculateNumberOfPressesForButtons(game.buttons, game.xTarget, game.yTarget);
+            Console.WriteLine($"Game {i++}");
+            var (A, B) = CalculateNumberOfPressesForButtons2(game.buttons, game.xTarget, game.yTarget);
+            if (A == 0 && B == 0)
+            {
+                Console.WriteLine("Impossible");
+                continue;
+            }
+
             tokens += A * 3 + B * 1;
         }
-        
+
         Console.WriteLine(tokens);
     }
 
@@ -29,16 +37,44 @@ public class Day13
         var YA = buttons[0].y;
         var XB = buttons[1].x;
         var YB = buttons[1].y;
-        
-        var totalY = XB*YA - XA*YB;
-        var totalYTarget = YA*xTarget - XA*yTarget;
-        if(totalYTarget % totalY != 0)
+
+        var totalY = XB * YA - XA * YB;
+        var totalYTarget = YA * xTarget - XA * yTarget;
+        if (totalYTarget % totalY != 0)
         {
             return (0, 0);
         }
-        
+
         var B = totalYTarget / totalY;
         var A = (xTarget - B * XB) / XA;
+        return (A, B);
+    }
+
+    static (long A, long B) CalculateNumberOfPressesForButtons2(List<(int x, int y)> buttons, long xTarget,
+        long yTarget)
+    {
+        long additionlDistance = 10000000000000;
+        xTarget += additionlDistance;
+        yTarget += additionlDistance;
+        long XA = buttons[0].x;
+        long YA = buttons[0].y;
+        long XB = buttons[1].x;
+        long YB = buttons[1].y;
+
+        long totalY = XB * YA - XA * YB;
+        long totalYTarget = YA * xTarget - XA * yTarget;
+        if (totalYTarget % totalY != 0)
+        {
+            return (0, 0);
+        }
+
+        long B = totalYTarget / totalY;
+        if ((xTarget - B * XB) % XA != 0)
+        {
+            return (0, 0);
+        }
+
+        long A = (xTarget - B * XB) / XA;
         return (A, B);
     }
 

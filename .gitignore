@@ -1,5 +1,6 @@
 # IntelliJ IDEA/Rider project files
 .idea/
+.idea
 *.iml
 
 # Ignore all object and binary files
@@ -7,5 +8,5 @@
 *.dll
 
 # Ignore specific directories for the AdventOfCode2025 project
-AdventOfCode2025/obj/
-AdventOfCode2025/bin/
+AdventOfCode2025/obj
+AdventOfCode2025/bin

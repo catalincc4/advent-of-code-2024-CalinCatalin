@@ -1,4 +1,7 @@
-﻿namespace AdventOfCode2025.Days;
+﻿using System;
+using System.Collections.Generic;
+
+namespace AdventOfCode2025.Days;
 
 public class Day10
 {
